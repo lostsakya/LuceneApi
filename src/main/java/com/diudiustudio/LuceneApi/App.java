@@ -1,5 +1,7 @@
 package com.diudiustudio.LuceneApi;
 
+import java.io.IOException;
+
 import org.apache.lucene.util.Version;
 
 /**
@@ -7,10 +9,15 @@ import org.apache.lucene.util.Version;
  *
  */
 public class App {
+	public static final String	indexPath	= "index";
+	public static final String	dataPath	= "data";
+	public static final Version	version		= Version.LUCENE_4_9;
+
 	public int createIndex() {
-		String indexPath = "index";
-		String dataPath = "data";
-		Version version = Version.LUCENE_4_9;
 		return Util.getIndex(indexPath, dataPath, version);
+	}
+
+	public void search(String field, String key) throws IOException {
+		QuaryUtil.search(indexPath, field, key);
 	}
 }
