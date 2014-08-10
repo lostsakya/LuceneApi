@@ -8,8 +8,8 @@ import org.apache.lucene.util.Version;
  */
 public class App {
 	public int createIndex() {
-		String indexPath = "/home/sakya/workspace/LuceneApi/index";
-		String dataPath = "/home/sakya/workspace/LuceneApi/data";
+		String indexPath = "index";
+		String dataPath = "data";
 		Version version = Version.LUCENE_4_9;
 		return Util.getIndex(indexPath, dataPath, version);
 	}
